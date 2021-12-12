@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!--Affichage des jeux-->
+    <section class="page">
+        <div class="checkbox">
+            <p>Action <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p>RPG <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p>Strategie <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p>Aventure <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p>Simulation <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p>Sport/course <input type="checkbox" name=" " value=" " checked="yes"/></p>
+        </div>
+
+        <div class="bibliotheque">
+        {% for jeu in contenu %}
+                <div class ="casejeu">
+                    <p class="azonixTitle truncate">{{ jeu.nom }}</p>
+                    <img class="imgjeu" src="{{ jeu.image }}">
+                </div>
+        {% endfor %}
+        </div>
+
+        {% if not contenu %}
+        <div class="noRecherche">
+            <p>
+                <i>*CRI CRI CRI CRI*</i><br>
+                Il n'y a rien ici !<br>
+                Ce n'est peut-être pas ce que vous vouliez faire...
+            </p>
+        </div>
+        {% endif %}
+
+        <div class="jeux"></div>
+    </section>
+{% endblock %}

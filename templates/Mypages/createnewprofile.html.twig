@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="page">
+        <p>Champs obligatoires*</p>
+        <p class="azonixTitle">Inscription</p>
+        <form action="add_profile.php" method="post">
+            <div class="formulaire">
+                <div class="intitule">
+                    <label for="name">Pseudo :</label><br>
+                    <label for="name">E-mail :</label><br>
+                    <label for="name">Mot de passe :</label><br>
+                    <label for="name">Confirmer mot de passe:</label>
+                </div>
+                <div class="champs">
+                    <input type="text" id="pseudo" name="pseudo" required><br>
+                    <input type="text" id="email" name="email" required><br>
+                    <input type="password" id="pass" name="pass" required><br>
+                    <input type="password" id="pass2" name="pass2" required><br>
+                </div>
+            </div>
+            <button class="bouton" type="submit">S'inscrire</button>
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="page">
+        <p class="azonixTitle">Connexion</p>
+        <form action="connection_profile.php" method="post" class="bloc">
+            <div class="formulaire">
+                <div class="intitule">
+                    <label for="name">Pseudo :</label><br>
+                    <label for="name">Mot de passe :</label>
+                </div>
+                <div class="champs">
+                    <input type="text" id="pseudo" name="pseudo" required><br>
+                    <input type="password" id="pass" name="pass" required>
+                </div>
+            </div>
+            <button class="bouton" type="submit">Se connecter</button>
+        </form>
+    </div>
+{% endblock %}

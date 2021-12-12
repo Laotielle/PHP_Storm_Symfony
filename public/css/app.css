@@ -1,0 +1,175 @@
+/*
+searchbar
+IC
+InfoConnected
+linkConnexion
+fenetreConnexion
+Etoile
+checkbox
+noRecherche
+messageErreur
+*/
+
+@font-face{
+    font-family: "Azonix.otf";
+    src: url("Azonix.otf"); /*https://www.dafont.com/azonix.font*/
+    font-weight: normal; /*Quand on utilise cette taille particulière*/
+}
+
+body {
+    font-family: Arial;
+    padding: 0;
+    margin: 0;
+    background-image: url('../images/theHunter_Call_of_the_Wild_Features1.jpg');
+    color: white;
+}
+
+a {
+    color: rgba(255,255,255,0.5); /*blanc transparent*/
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration:underline;
+}
+
+.iconprofil {
+    display: block;
+    position: relative;
+    width:64px;
+    height:64px;
+    overflow:hidden;
+    vertical-align:middle;
+    object-fit:cover;
+    border-radius: 10px; /*Rayon des coins du block noir*/
+}
+
+.imgjeu {
+    height: 377px;
+    width: 271px;
+    object-fit: cover;
+}
+
+.casejeu{
+    margin: 10px;
+    width: 271px;
+}
+
+.bibliotheque{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.barre {
+    display: flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inscription {
+    color: white;
+    font-family: "Azonix.otf";
+    margin-right : 20px;
+}
+
+.connexion {
+    color: white;
+    font-family: "Azonix.otf";
+    margin-right : 50px;
+}
+
+.page {
+    margin:9% 9%;
+    padding-top: 1%;
+    padding-left:2%;
+    padding-right:2%;
+    padding-bottom: 1%;
+    background-color: rgba(0,0,0,0.5); /*Noir transparent*/
+    border-radius: 20px; /*Rayon des coins du block noir*/
+    color: white; /*Couleur police d'ecriture*/
+    justify-content: center;
+}
+
+.azonixTitle {
+    font-family: "Azonix.otf";
+    text-align: center;
+    justify-content: space-around;
+}
+
+.azonix {
+    font-family: "Azonix.otf";
+}
+
+.azonixTransparent{
+    font-family: "Azonix.otf";
+    color: rgba(255,255,255,0.5); /*blanc transparent*/
+}
+.checkbox{
+    display:flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    font-family: "Azonix.otf";
+    justify-content: space-around;
+}
+
+.formulaire{
+    display:flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    justify-content:center;
+}
+
+.col1{
+    display : flex;
+    flex-direction: column;
+}
+
+.space{
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+.champs{
+    margin-left:1.5%;
+}
+
+.noRecherche {
+    display:flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.messageErreur {
+    display:flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    text-align: center;
+    color:red;
+    justify-content: space-around;
+}
+.bouton {
+    background-color: rgba(0,0,0,0);
+    color:white;
+    border-radius:10px;
+    padding:0.2% 0.2%;
+    font-family: "Azonix.otf";
+    text-decoration: none;
+    border:0;
+    text-align:center;
+    margin-left:0.5%;
+    margin-right:0.5%;
+}
+.bouton:hover {
+    text-decoration:underline;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+}
