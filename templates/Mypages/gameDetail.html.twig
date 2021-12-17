@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="pageDetailJeu">
+        <table>
+            <tr>
+                <td rowspan="3"><img class="imgjeu" src="{{ jeu.image }}"></td>
+                <td><p class="azonixDescription">{{ jeu.nom }}</p>
+                    <p class="typoBlanche">{{ jeu.synopsis }}...</p>
+                    <a href="{{ jeu.lien }}">Re-télécharger</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

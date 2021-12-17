@@ -1,15 +1,4 @@
-/*
-searchbar
-IC
-InfoConnected
-linkConnexion
-fenetreConnexion
-Etoile
-checkbox
-noRecherche
-messageErreur
-*/
-
+/*--------------------------------Général--------------------------------*/
 @font-face{
     font-family: "Azonix.otf";
     src: url("Azonix.otf"); /*https://www.dafont.com/azonix.font*/
@@ -21,19 +10,106 @@ body {
     padding: 0;
     margin: 0;
     background-image: url('../images/theHunter_Call_of_the_Wild_Features1.jpg');
+}
+
+.page {
+    margin:9% 9%;
+    padding-top: 1%;
+    padding-left:2%;
+    padding-right:2%;
+    padding-bottom: 1%;
+    background-color: rgba(0,0,0,0.5); /*Noir transparent*/
+    border-radius: 20px; /*Rayon des coins du block noir*/
+    justify-content: center;
+}
+.pageDetailJeu {
+    margin:9% 9%;
+    padding-top: 1%;
+    padding-left:15%;
+    padding-right:15%;
+    padding-bottom: 1%;
+    background-color: rgba(0,0,0,0.5); /*Noir transparent*/
+    border-radius: 20px; /*Rayon des coins du block noir*/
+    justify-content: center;
+}
+
+/*--------------------------------Typographie--------------------------------*/
+.azonixTitle {
+    font-family: "Azonix.otf";
+    text-align: center;
+    justify-content: space-around;
     color: white;
 }
 
+.azonix {
+    font-family: "Azonix.otf";
+}
+
+.azonixTransparent{
+    font-family: "Azonix.otf";
+    color: rgba(255,255,255,0.5); /*blanc transparent*/
+}
+
+.typoBlanche {
+    color:white;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+}
+
 a {
+    font-family: "Azonix.otf";
     color: rgba(255,255,255,0.5); /*blanc transparent*/
     text-decoration: none;
 }
 
 a:hover {
+    font-family: "Azonix.otf";
     color: white;
     text-decoration:underline;
 }
+.azonixJeu {
+    font-family: "Azonix.otf";
+    justify-content: space-around;
+}
+.azonixDescription {
+    font-family: "Azonix.otf";
+    justify-content: space-around;
+    color:white;
+}
 
+.tableau{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+table{
+
+}
+
+td{
+    vertical-align: top;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*--------------------------------Barre commune à toutes les pages--------------------------------*/
+.barre {
+    display: flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*Pour rechercher joueur ou jeu*/
+.champs{
+    margin-left:1.5%;
+}
+/*--------------------------------Profil----------------------------------------*/
 .iconprofil {
     display: block;
     position: relative;
@@ -43,32 +119,6 @@ a:hover {
     vertical-align:middle;
     object-fit:cover;
     border-radius: 10px; /*Rayon des coins du block noir*/
-}
-
-.imgjeu {
-    height: 377px;
-    width: 271px;
-    object-fit: cover;
-}
-
-.casejeu{
-    margin: 10px;
-    width: 271px;
-}
-
-.bibliotheque{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-}
-
-.barre {
-    display: flex;
-    margin-left:0.5%;
-    margin-right:0.5%;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .inscription {
@@ -83,59 +133,59 @@ a:hover {
     margin-right : 50px;
 }
 
-.page {
-    margin:9% 9%;
-    padding-top: 1%;
-    padding-left:2%;
-    padding-right:2%;
-    padding-bottom: 1%;
-    background-color: rgba(0,0,0,0.5); /*Noir transparent*/
-    border-radius: 20px; /*Rayon des coins du block noir*/
-    color: white; /*Couleur police d'ecriture*/
-    justify-content: center;
+/*--------------------------------Case des jeux--------------------------------*/
+.bibliotheque{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 }
-
-.azonixTitle {
-    font-family: "Azonix.otf";
-    text-align: center;
-    justify-content: space-around;
-}
-
-.azonix {
-    font-family: "Azonix.otf";
-}
-
-.azonixTransparent{
-    font-family: "Azonix.otf";
-    color: rgba(255,255,255,0.5); /*blanc transparent*/
-}
-.checkbox{
+/*Checkbox des catégories de jeux*/
+.checkbox {
     display:flex;
     margin-left:0.5%;
     margin-right:0.5%;
     font-family: "Azonix.otf";
+    color: white;
     justify-content: space-around;
 }
 
-.formulaire{
-    display:flex;
-    margin-left:0.5%;
-    margin-right:0.5%;
-    justify-content:center;
+.casejeu{
+    margin: 10px;
+    width: 271px;
+    position: relative;
 }
 
-.col1{
-    display : flex;
-    flex-direction: column;
+.imgjeu {
+    height: 377px;
+    width: 271px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
 
-.space{
-    margin-top:8px;
-    margin-bottom:8px;
+.inImg{
+    display: block;
+    object-fit: cover;
+    height: 377px;
+    position: absolute;
+    z-index: 2;
+    /*Couleurs transparentes*/
+    background-color: rgba(255,255,255,0);
+    color: rgba(255,255,255,0);
 }
 
-.champs{
-    margin-left:1.5%;
+.inImg:hover{
+    display: block;
+    object-fit: cover;
+    margin-top: 264px;
+    height:113px;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255,255,255,1);
+    color:black;
 }
 
 .noRecherche {
@@ -145,7 +195,15 @@ a:hover {
     text-align: center;
     justify-content: space-around;
 }
+/*--------------------------------Regarder le détail d'un jeu--------------------------------*/
 
+/*--------------------------------Formulaires--------------------------------*/
+.formulaire{
+    display:flex;
+    margin-left:0.5%;
+    margin-right:0.5%;
+    justify-content:center;
+}
 .messageErreur {
     display:flex;
     margin-left:0.5%;
@@ -169,7 +227,13 @@ a:hover {
 .bouton:hover {
     text-decoration:underline;
 }
+/*--------------------------------Outil autre--------------------------------*/
+.col1{
+    display : flex;
+    flex-direction: column;
+}
 
-.truncate {
-    text-overflow: ellipsis;
+.space{
+    margin-top:8px;
+    margin-bottom:8px;
 }

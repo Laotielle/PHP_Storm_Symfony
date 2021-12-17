@@ -3,20 +3,23 @@
 {% block body %}
     <!--Affichage des jeux-->
     <section class="page">
-        <div class="checkbox">
-            <p>Action <input type="checkbox" name=" " value=" " checked="yes"/></p>
-            <p>RPG <input type="checkbox" name=" " value=" " checked="yes"/></p>
-            <p>Strategie <input type="checkbox" name=" " value=" " checked="yes"/></p>
-            <p>Aventure <input type="checkbox" name=" " value=" " checked="yes"/></p>
-            <p>Simulation <input type="checkbox" name=" " value=" " checked="yes"/></p>
-            <p>Sport/course <input type="checkbox" name=" " value=" " checked="yes"/></p>
-        </div>
+        <!--<div class="checkbox">
+            <p class="checkbox">Action <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p class="checkbox">RPG <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p class="checkbox">Strategie <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p class="checkbox">Aventure <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p class="checkbox">Simulation <input type="checkbox" name=" " value=" " checked="yes"/></p>
+            <p class="checkbox">Sport/course <input type="checkbox" name=" " value=" " checked="yes"/></p>
+        </div>-->
 
         <div class="bibliotheque">
         {% for jeu in contenu %}
                 <div class ="casejeu">
-                    <p class="azonixTitle truncate">{{ jeu.nom }}</p>
-                    <img class="imgjeu" src="{{ jeu.image }}">
+                    <div class="inImg">
+                        <p class="azonixJeu">{{ jeu.nom[:17] }}</p>
+                        <p>{{ jeu.synopsis[:73] }}...</p>
+                    </div>
+                    <a href="{{ path('game-details', {'id': jeu.id}) }}"><img class="imgjeu" src="{{ jeu.image }}"></a>
                 </div>
         {% endfor %}
         </div>

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Jeux;
 use App\Repository\JeuxRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -45,7 +46,7 @@ class MainController extends AbstractController
     /**
      * @Route("/add_a_new_game", name="add-a-new-game")
      */
-    public function addanewgame(Request $request)
+    public function addanewgame(Request $request, ManagerRegistry $doctrine)
     {
         $unJeu = new Jeux();
         $formJeu = $this -> createFormBuilder($unJeu)
@@ -58,16 +59,30 @@ class MainController extends AbstractController
 
         $formJeu->handleRequest($request);
         if ($formJeu->isSubmitted() && $formJeu->isValid()) {
+            $entityManager = $doctrine->getManager();
+
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             $task = $formJeu->getData();
             $task->setDateAjout(new \DateTime());
-            dd($task);
+            $entityManager->persist($task); //sauvegarde la modification de l'entité dans la base
+            $entityManager->flush(); //exécute la requête SQL
             // ... perform some action, such as saving the task to the database
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('app_homepage');
         }
 
         return $this->render('Mypages/addanewgame.html.twig',['formJeu'=>$formJeu->createView()]);
     }
+
+    /**
+     * @Route("/game/{id}", name="game-details")
+     */
+    public function gameDetails(Jeux $jeux)
+    {
+        //dd($jeux);
+
+        return $this->render('Mypages/gameDetail.html.twig', ['jeu' => $jeux ]);
+    }
+
 }
